@@ -1,21 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import {
   FormBuilder,
   FormGroup,
   FormControl,
   Validators
-} from '@angular/forms';
-import { SqlServiceService } from 'src/app/sql-service.service';
+} from "@angular/forms";
+import { SqlServiceService } from "src/app/sql-service.service";
 import {
   ToastController,
   NavController,
   ModalController
-} from '@ionic/angular';
+} from "@ionic/angular";
 
 @Component({
-  selector: 'app-add-contact',
-  templateUrl: './add-contact.page.html',
-  styleUrls: ['./add-contact.page.scss']
+  selector: "app-add-contact",
+  templateUrl: "./add-contact.page.html",
+  styleUrls: ["./add-contact.page.scss"]
 })
 export class AddContactPage implements OnInit {
   addContactForm: FormGroup;
@@ -33,10 +33,10 @@ export class AddContactPage implements OnInit {
 
   createForm() {
     this.addContactForm = this.formBuilder.group({
-      mobile: new FormControl('', Validators.required),
-      date: new FormControl('', Validators.required),
-      title: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required)
+      mobile: new FormControl("", Validators.required),
+      date: new FormControl("", Validators.required),
+      title: new FormControl("", Validators.required),
+      description: new FormControl("", Validators.required)
     });
   }
 
@@ -45,7 +45,7 @@ export class AddContactPage implements OnInit {
     this.sqlService.addContact(addContactFormValue).then(
       async () => {
         const toast = await this.toastController.create({
-          message: 'Contact added Successfully.',
+          message: "Contact added Successfully.",
           duration: 2000
         });
         toast.present();
