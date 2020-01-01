@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>UPDATE CONTACT</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="updateContactForm" (submit)="onSubmit(updateContactForm.value)">
+    <ion-item>
+      <ion-label position="floating">Contact Number</ion-label>
+      <ion-input type="tel" formControlName="mobile"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Date</ion-label>
+      <ion-datetime displayFormat="D MMM YYYY H:mm" formControlName="date"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Title</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea type="text" formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-button type="submit" color="dark" expand="block">Update Contact</ion-button>
+  </form>
+</ion-content>
